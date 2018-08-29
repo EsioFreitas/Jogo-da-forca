@@ -2,6 +2,7 @@ palavra_chave = "banana"
 
 enforcou = False
 acertou = False
+letras_acertadas = ["_","_","_","_","_","_",]
 
 while (not enforcou and not acertou):
     chute = input("Qual é a letra? ")
@@ -10,5 +11,7 @@ while (not enforcou and not acertou):
     index = 0
     for letra in palavra_chave:
         if(chute.upper() == letra.upper()):
-            print("Encontrei a letra {} na posição {}".format(letra, index))
+            letras_acertadas[index] = letra
         index += 1
+
+    print(letras_acertadas)
