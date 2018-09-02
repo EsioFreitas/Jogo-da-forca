@@ -1,16 +1,27 @@
-palavra_chave = "banana"
+import random
+
 enforcou = False
 acertou = False
 erros = 0
-letras_acertadas = ["_" for letra in palavra_chave]
 
 print("*********************************")
 print("***Bem vindo ao jogo da Forca!***")
 print("*********************************")
 
+arquivo = open("palavras.txt", "r")
+palavras = []
+for linha in arquivo:
+    linha = linha.strip()
+    palavras.append(linha)
+arquivo.close()
+
+numero = random.randrange(0,len(palavras))
+palavra_chave = palavras[numero].upper()
+letras_acertadas = ["_" for letra in palavra_chave]
+
 while (not enforcou and not acertou):
     chute = input("Qual é a letra? ")
-    chute = chute.strip()
+    chute = chute.strip().upper()
 
     if(chute in palavra_chave):
         index = 0
