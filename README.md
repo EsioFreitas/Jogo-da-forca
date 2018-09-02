@@ -17,4 +17,4 @@ Segue como o programa funciona:
 
 
 ## IDEALIZADORES
-Ésio Gustavo Pereira Freitas e [Pedro Henrique Andrade Féo](https://gitlab.com/Phe0) - 2018.1.
+Ésio Gustavo Pereira Freitas - Setembro de 2018.
