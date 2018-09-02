@@ -1,22 +1,80 @@
+
 import random
 
 enforcou = False
 acertou = False
 erros = 0
 
-print("*********************************")
-print("***Bem vindo ao jogo da Forca!***")
-print("*********************************")
+def desenha_forca(erros):
+    print("  _______     ")
+    print(" |/      |    ")
 
-arquivo = open("palavras.txt", "r")
-palavras = []
-for linha in arquivo:
-    linha = linha.strip()
-    palavras.append(linha)
-arquivo.close()
+    if(erros == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
 
-numero = random.randrange(0,len(palavras))
-palavra_chave = palavras[numero].upper()
+    if(erros == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(erros == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (erros == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+def abertura_do_programa():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
+
+def carregar_palavra_secreta():
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+    arquivo.close()
+
+    numero = random.randrange(0,len(palavras))
+    palavra_chave = palavras[numero].upper()
+    return palavra_chave
+
+abertura_do_programa()
+palavra_chave = carregar_palavra_secreta()
+
 letras_acertadas = ["_" for letra in palavra_chave]
 
 while (not enforcou and not acertou):
@@ -31,13 +89,39 @@ while (not enforcou and not acertou):
             index += 1
     else:
         erros +=1
-        print(erros)
+        desenha_forca(erros)
 
-    enforcou = erros == 6
+    enforcou = erros == 7
     acertou = "_" not in letras_acertadas
     print(letras_acertadas)
 
 if(acertou):
     print("Parabens!! Você ganhou o jogo")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
 else:
     print("Desculpe... Você perdeu o jogo")
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
