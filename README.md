@@ -15,5 +15,5 @@ $ python3 jogo.py
 3. Por fim, o jogo termina caso o jogador acerte a palavra ou perca todas as tentativas.
 
 
-## IDEALIZADORES
+## IDEALIZADOR
 Ésio Gustavo Pereira Freitas - Setembro de 2018.
