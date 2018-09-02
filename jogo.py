@@ -5,7 +5,7 @@ enforcou = False
 acertou = False
 erros = 0
 
-def desenha_forca(erros):
+def desenha_forca(erros, letra_usada):
     print("  _______     ")
     print(" |/      |    ")
 
@@ -52,7 +52,7 @@ def desenha_forca(erros):
         print(" |      / \   ")
 
     print(" |            ")
-    print("_|___         ")
+    print("_|___        Letras usadas: {}".format(letra_usada))
     print()
 
 def abertura_do_programa():
@@ -77,13 +77,12 @@ palavra_chave = carregar_palavra_secreta()
 
 letras_acertadas = ["_" for letra in palavra_chave]
 letra_usada = []
+letra_usada_jogo = []
 while (not enforcou and not acertou):
     chute = input("Qual é a letra? ")
     chute = chute.strip().upper()
-    if(chute in letra_usada):
+    if(chute in letra_usada_jogo):
         print("Você já usou essa letra")
-        print("As letras que vc ja usou são:")
-        print(letra_usada)
     else:
         if(chute in palavra_chave):
             index = 0
@@ -93,12 +92,13 @@ while (not enforcou and not acertou):
                 index += 1
         else:
             erros +=1
-            desenha_forca(erros)
+            letra_usada.append(chute)
+            desenha_forca(erros, letra_usada)
 
         enforcou = erros == 7
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
-        letra_usada.append(chute)
+        letra_usada_jogo.append(chute)
 
 
 if(acertou):

@@ -1,3 +1,6 @@
 gato
 peixe
 tartaruga
+tubarao
+galinha
+boi

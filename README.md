@@ -9,12 +9,11 @@ Para poder usar o prgrama, deverá usar os seguintes passos:
 $ python3 jogo.py
 ```
 
-
 ## FUNCIONAMENTO
 Segue como o programa funciona:
-1. Qualquer usuário pode ler os artigos;
-2. Apenas usuários logados podem fazer artigos;
-3. Apenas o proprietário dos artigos pode editá-los ou apagá-los.
+1. O jogador começa o jogo podendo adivinhar uma letra;
+2. Se acertar, mostrará a letra dentro da palavra. Caso ao contrário, perderá uma das vidas;
+3. Por fim, o jogo termina caso o jogador acerte a palavra ou perca todas as tentativas.
 
 
 ## IDEALIZADORES
