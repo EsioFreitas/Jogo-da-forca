@@ -76,24 +76,30 @@ abertura_do_programa()
 palavra_chave = carregar_palavra_secreta()
 
 letras_acertadas = ["_" for letra in palavra_chave]
-
+letra_usada = []
 while (not enforcou and not acertou):
     chute = input("Qual é a letra? ")
     chute = chute.strip().upper()
-
-    if(chute in palavra_chave):
-        index = 0
-        for letra in palavra_chave:
-            if(chute.upper() == letra.upper()):
-                letras_acertadas[index] = letra
-            index += 1
+    if(chute in letra_usada):
+        print("Você já usou essa letra")
+        print("As letras que vc ja usou são:")
+        print(letra_usada)
     else:
-        erros +=1
-        desenha_forca(erros)
+        if(chute in palavra_chave):
+            index = 0
+            for letra in palavra_chave:
+                if(chute.upper() == letra.upper()):
+                    letras_acertadas[index] = letra
+                index += 1
+        else:
+            erros +=1
+            desenha_forca(erros)
 
-    enforcou = erros == 7
-    acertou = "_" not in letras_acertadas
-    print(letras_acertadas)
+        enforcou = erros == 7
+        acertou = "_" not in letras_acertadas
+        print(letras_acertadas)
+        letra_usada.append(chute)
+
 
 if(acertou):
     print("Parabens!! Você ganhou o jogo")
