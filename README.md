@@ -1,3 +1,4 @@
+# Hangman
 O programa é um jogo da forca, o qual escolhe uma palavra aleatoriamente do arquivo palavras.txt para o jogador tentar descobrir. O jogador pode errar até 7 vezes e, caso isso ocorra, ele perderá o jogo. A única forma de ganhar a partida é acertando todas as letras da palavra.
 
 ## PRÉ-REQUISITOS (Python3)
